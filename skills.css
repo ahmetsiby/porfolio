@@ -21,6 +21,9 @@
   display: inline-block; /* S'assure que l'icône occupe l'espace de 150x150px */
   cursor: pointer;
 }
+.red {
+  color: red;
+}
 .fa-brands:hover,
 .fa-solid:hover {
   color: #f16529; /* Couleur pour HTML5 (rouge) */

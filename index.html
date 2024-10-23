@@ -222,6 +222,7 @@
       const burger = document.getElementById("burger");
       const navLinks = document.querySelector(".nav-links");
       const links = document.querySelectorAll(".ancre");
+      const icon = document.querySelectorAll(".fa-brands");
 
       // Désactiver le scroll
       function disableScroll() {
@@ -237,7 +238,9 @@
       burger.addEventListener("click", () => {
         burger.classList.toggle("toggle");
         navLinks.classList.toggle("active");
-
+        icon.forEach((icon) => {
+          icon.classList.toggle("red");
+        });
         // Désactiver le scroll si le menu est ouvert
         if (navLinks.classList.contains("active")) {
           disableScroll();
