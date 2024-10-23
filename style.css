@@ -48,44 +48,59 @@ header {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-header > ul {
+/* Styles for ul, li, and a elements */
+.navbar {
   display: flex;
-  align-self: center;
-  justify-self: center;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-links {
+  display: flex;
   gap: 2rem;
+  list-style: none;
 }
 
-header > ul > li {
+.nav-links li {
   position: relative;
+  padding: 10px;
+  transition: all 0.3s ease;
 }
 
-header > ul > li::after {
-  position: absolute;
+.nav-links li:hover {
+  transform: scale(1.1); /* Slight scaling effect on hover */
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #006d77;
+  transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+  background-color: #83c5be;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+/* Adding line under the hovered link */
+.nav-links li::after {
   content: "";
+  position: absolute;
   width: 0;
-  height: 2px;
-  background-color: #e29578;
-  bottom: -2px;
+  height: 3px;
+  background-color: #042c30;
+  bottom: 0;
   left: 0;
   transition: width 0.4s ease-in-out;
 }
 
-header > ul > li:hover::after {
+.nav-links li:hover::after {
   width: 100%;
-}
-
-.navbar li a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-  padding: 10px;
-  transition: background-color 0.4s ease;
-}
-
-.navbar li a:hover {
-  background-color: #83c5be;
-  border-radius: 5px;
 }
 
 .logo {
@@ -98,10 +113,12 @@ header > ul > li:hover::after {
   top: 80%;
 }
 
-.logo > img {
+.logo > .img_logo {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  padding: 0;
+  margin: 0;
 }
 
 header > h1 {
@@ -109,6 +126,21 @@ header > h1 {
   margin-top: 20px;
   font-size: 2.5em;
   font-weight: 600;
+}
+/**Menu de navigation menue burger */
+
+.burger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.burger-bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease-in-out;
 }
 
 /*Main ou corps de la page*/
@@ -119,7 +151,8 @@ main {
   grid-template-areas:
     "presentation"
     "competences"
-    "projet";
+    "projet"
+    "fromulaire";
   gap: 30px;
   padding: 50px 20px;
 }
@@ -148,113 +181,31 @@ main {
   line-height: 1.8;
 }
 
-#competences {
+.skills {
   grid-area: competences;
   background-color: #e29578;
   padding: 30px;
   border-radius: 10px;
-  color: white;
+  color: rgb(27, 26, 26);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   gap: 20px;
-}
-
-#competences > h2 {
+  overflow: hidden;
   text-align: center;
-  font-size: 2em;
-}
-
-.competence_content {
-  display: flex;
-  justify-content: space-evenly;
-  gap: 20px;
-}
-
-.competence {
-  background-color: #ffddd2;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.competence ul {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.competence ul ul {
-  display: flex;
-  flex-direction: row;
-  gap: 15px;
 }
 
 /* Info bulles */
-a.tooltip {
-  position: relative;
-  color: #006d77;
-  text-decoration: none;
-  font-weight: bold;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-a.tooltip:hover {
-  color: #181717;
-}
-.tooltip_content img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-a.tooltip .tooltip_content::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 10px;
-  border-style: solid;
-  border-color: white transparent transparent transparent;
-}
 
 /* Infobulle de base */
-a.tooltip .tooltip_content {
-  display: block;
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%) translateY(10px);
-  background-color: white;
-  border: 1px solid #ccc;
-  padding: 15px;
-  width: 200px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  text-align: center;
-  z-index: 10;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s;
-}
-
-a.tooltip:hover .tooltip_content {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0);
-}
 
 /*Projet */
 #projet {
   grid-area: projet;
-  background-color: #006d77;
+  background-color: #006d77; /* Couleur principale */
   padding: 30px;
   border-radius: 10px;
-  color: white;
+  color: white; /* Texte en blanc pour le contraste */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
@@ -282,6 +233,7 @@ a.tooltip:hover .tooltip_content {
 }
 /**Formulaire de mail*/
 .contact-form {
+  grid-area: fromulaire;
   width: 600px;
   background: white;
   padding: 20px;
@@ -315,11 +267,130 @@ a.tooltip:hover .tooltip_content {
   background-color: #004f4d;
 }
 /**Footer */
+
 footer {
   grid-area: footer;
-  background-color: #83c5be;
-  padding: 20px;
-  text-align: center;
+  background-color: #006d77;
   color: white;
-  font-size: 1.2em;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+footer h3 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+footer p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+.social-icons {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icons li {
+  display: inline-block;
+}
+
+.social-icons li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+}
+
+.social-icons li a:hover {
+  color: #83c5be; /* Changement de couleur au survol */
+}
+
+.social-icons li i {
+  font-size: 1.5em;
+  margin-right: 8px;
+}
+
+footer p:last-of-type {
+  margin-top: 30px;
+  font-size: 1em;
+  color: #83c5be;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  /* Cacher les liens du menu sur les petits écrans */
+  .social-icons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .social-icons li a {
+    font-size: 1.2em;
+  }
+  .container {
+    grid-template-areas:
+      "header header header"
+      "main main main"
+      "footer footer footer";
+  }
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: #006d77;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
+  }
+  #presentation {
+    width: 100%;
+    height: 40vh;
+    overflow-y: scroll;
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+    position: fixed;
+  }
+
+  /* Bouton burger visible sur les petits écrans */
+  .burger {
+    display: flex;
+  }
+
+  /* Animation pour ouvrir le burger */
+  .burger.toggle .burger-bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .burger.toggle .burger-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger.toggle .burger-bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  .projet_content > iframe {
+    width: 100%;
+  }
+  /**Formulaire de mail*/
+  .contact-form {
+    width: 100%;
+  }
 }

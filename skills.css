@@ -1,0 +1,39 @@
+/* Carrousel des logos */
+.logo-carousel {
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.logos {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  animation: scroll 20s linear infinite;
+}
+
+.fa-brands,
+.fa-solid {
+  font-size: 50px; /* Taille de l'icône */
+  color: rgba(0, 0, 255, 0.733); /* Couleur pour HTML5 (orange) */
+  margin: 0 30px;
+  display: inline-block; /* S'assure que l'icône occupe l'espace de 150x150px */
+  cursor: pointer;
+}
+.fa-brands:hover,
+.fa-solid:hover {
+  color: #f16529; /* Couleur pour HTML5 (rouge) */
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* Animation pour faire défiler les logos */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

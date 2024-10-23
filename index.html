@@ -4,8 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="skills.css" />
     <title>Ahmet siby | Mon Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
     <script type="text/javascript">
       (function () {
         // Initialisation d'EmailJS avec votre User ID (à remplacer par le vôtre)
@@ -16,15 +25,23 @@
   <body>
     <div class="container">
       <header>
-        <ul class="navbar">
-          <li><a href="#presentation">Présentation</a></li>
-          <li><a href="#competences">Compétences</a></li>
-          <li><a href="#projet">Mes Projets</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="burger" id="burger">
+          <span class="burger-bar"></span>
+          <span class="burger-bar"></span>
+          <span class="burger-bar"></span>
+        </div>
+        <nav class="navbar" id="navbar">
+          <ul class="nav-links">
+            <li><a href="#presentation" class="ancre">Présentation</a></li>
+            <li><a href="#competences" class="ancre">Compétences</a></li>
+            <li><a href="#projet" class="ancre">Mes Projets</a></li>
+            <li><a href="#contact" class="ancre">Contact</a></li>
+          </ul>
+        </nav>
         <h1>Ahmet Siby developpeur web</h1>
         <div class="logo">
           <img
+            class="img_logo"
             src="https://avatar.iran.liara.run/public/23"
             alt="image de Ahmet siby"
           />
@@ -46,169 +63,39 @@
             continuellement les interfaces web.
           </p>
         </div>
-        <div id="competences">
-          <h2>Mes compétences</h2>
-          <div class="competence_content">
-            <div class="competence">
-              <h3>FRONT END</h3>
-              <ul>
-                <li>
-                  <ul>
-                    <li>
-                      <a
-                        href="https://developer.mozilla.org/fr/docs/Glossary/HTML5"
-                        class="tooltip"
-                        target="_blank"
-                        >HTML5
-                        <span class="tooltip_content">
-                          <img src="/images/html5.png" alt="Image HTML5" />
-                          <p>
-                            HTML5 est la dernière version du langage de balisage
-                            pour structurer le contenu web, avec de nouvelles
-                            balises sémantiques, des fonctionnalités multimédia
-                            natives (audio, vidéo)
-                          </p>
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://developer.mozilla.org/fr/docs/Learn/CSS"
-                        class="tooltip"
-                        target="_blank"
-                        >CSS3
-                        <span class="tooltip_content">
-                          <img src="/images/css3.png" alt="Image CSS 3" />
-                          <p>
-                            Le CSS (Cascading Style Sheets) définit l'apparence
-                            des éléments HTML, contrôlant les couleurs, polices,
-                            et mises en page. Il sépare la structure du style
-                            pour un design flexible
-                          </p>
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://developer.mozilla.org/fr/docs/Learn/JavaScript"
-                        class="tooltip"
-                        target="_blank"
-                        >Javascript
-                        <span class="tooltip_content">
-                          <img
-                            src="/images/javasscript.png"
-                            alt="Image Javascript"
-                          />
-                          <p>
-                            Le JavaScript est un langage de programmation qui
-                            rend les pages web interactives, en gérant les
-                            événements, animations, et requêtes serveur côté
-                            client.
-                          </p>
-                        </span>
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <ul>
-                    <li>
-                      <a
-                        href="https://getbootstrap.com/docs/5.0/getting-started/introduction/"
-                        class="tooltip"
-                        target="_blank"
-                        >Boostrap
-                        <span class="tooltip_content">
-                          <img
-                            src="/images/bootstrap.png"
-                            alt="Image Bootstrap"
-                          />
-                          <p>
-                            Bootstrap est un framework CSS open-source qui
-                            facilite le développement de sites web réactifs et
-                            modernes. Il propose des composants préconstruits et
-                            un système de grille flexible pour créer des
-                            interfaces rapidement.
-                          </p>
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://tailwindcss.com/"
-                        class="tooltip"
-                        target="_blank"
-                        >TailwindCss
-                        <span class="tooltip_content">
-                          <img
-                            src="/images/tailwindCss.png"
-                            alt="Image tailwindCss"
-                          />
-                          <p>
-                            Tailwind CSS est un framework CSS utilitaire qui
-                            permet de concevoir rapidement des interfaces en
-                            appliquant directement des classes prédéfinies dans
-                            le HTML. Il offre une grande flexibilité pour
-                            personnaliser les styles sans écrire de CSS
-                            personnalisé.
-                          </p>
-                        </span>
-                      </a>
-                    </li>
-                    <li><a href="">Sass</a></li>
-                    <li><a href="">Less</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <ul>
-                    <li><a href="">Vuejs</a></li>
-                    <li><a href="">Reactjs</a></li>
-                  </ul>
-                </li>
-                <li></li>
-              </ul>
+        <div id="competences" class="skills">
+          <h2>skills</h2>
+          <section>
+            <div class="logo-carousel">
+              <div class="logos">
+                <i class="fa-brands fa-html5"></i>
+                <i class="fa-brands fa-css3"></i>
+                <i class="fa-brands fa-js"></i>
+                <i class="fa-brands fa-node-js"></i>
+                <i class="fa-brands fa-vuejs"></i>
+                <i class="fa-brands fa-bootstrap"></i>
+                <i class="fa-brands fa-sass"></i>
+                <i class="fa-solid fa-database"></i>
+                <i class="fa-brands fa-git"></i>
+                <i class="fa-brands fa-github"></i>
+                <i class="fa-brands fa-docker"></i>
+                <i class="fa-brands fa-linux"></i>
+                <!-- Duplique les images pour l'effet continu -->
+                <i class="fa-brands fa-html5"></i>
+                <i class="fa-brands fa-css3"></i>
+                <i class="fa-brands fa-js"></i>
+                <i class="fa-brands fa-node-js"></i>
+                <i class="fa-brands fa-vuejs"></i>
+                <i class="fa-brands fa-bootstrap"></i>
+                <i class="fa-brands fa-sass"></i>
+                <i class="fa-solid fa-database"></i>
+                <i class="fa-brands fa-git"></i>
+                <i class="fa-brands fa-github"></i>
+                <i class="fa-brands fa-docker"></i>
+                <i class="fa-brands fa-linux"></i>
+              </div>
             </div>
-            <div class="competence">
-              <h3>Back END</h3>
-              <ul>
-                <li>
-                  <ul>
-                    <li><a href="">Nodejs</a></li>
-                    <li><a href="">Express</a></li>
-                    <li><a href="">EJS</a></li>
-                    <li><a href="">PUG</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <ul>
-                    <li><a href="">PHP</a></li>
-                    <li><a href="">Symfony</a></li>
-                    <li><a href="">Twig</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <ul>
-                    <li><a href="">MySQL</a></li>
-                    <li><a href="">PostgreSQL</a></li>
-                    <li><a href="">MariaDB</a></li>
-                    <li><a href="">Sqlite</a></li>
-                    <li><a href="">MongoDB</a></li>
-                    <li><a href="">NeDB</a></li>
-                  </ul>
-                </li>
-                <li></li>
-              </ul>
-            </div>
-            <div class="competence">
-              <h3>Autes techno</h3>
-              <ul>
-                <li><a href="">Git</a></li>
-                <li><a href="">Docker</a></li>
-                <li><a href="">GitHUB</a></li>
-                <li><a href="">Linux | Bash</a></li>
-              </ul>
-            </div>
-          </div>
+          </section>
         </div>
         <div id="projet">
           <div class="projet_content">
@@ -272,7 +159,35 @@
           </form>
         </div>
       </main>
-      <footer id="contact"></footer>
+      <footer id="contact">
+        <div class="footer-container">
+          <h3>Contactez-moi</h3>
+          <p>Vous pouvez me contacter via les liens ci-dessous :</p>
+          <ul class="social-icons">
+            <li>
+              <a href="https://github.com/votreprofil" target="_blank">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedin.com/in/votreprofil" target="_blank">
+                <i class="fa-brands fa-linkedin"></i> LinkedIn
+              </a>
+            </li>
+            <li>
+              <a href="tel:+1234567890">
+                <i class="fa-solid fa-phone"></i> +123 456 7890
+              </a>
+            </li>
+            <li>
+              <a href="mailto:votreemail@example.com">
+                <i class="fa-solid fa-envelope"></i> votreemail@example.com
+              </a>
+            </li>
+          </ul>
+          <p>&copy; 2023 Ahmet Siby | Tous droits réservés</p>
+        </div>
+      </footer>
     </div>
     <script type="text/javascript">
       document
@@ -302,6 +217,43 @@
           document.getElementById("email").value = "";
           document.getElementById("message").value = "";
         });
+    </script>
+    <script type="text/javascript">
+      const burger = document.getElementById("burger");
+      const navLinks = document.querySelector(".nav-links");
+      const links = document.querySelectorAll(".ancre");
+
+      // Désactiver le scroll
+      function disableScroll() {
+        document.body.style.overflow = "hidden";
+      }
+
+      // Réactiver le scroll
+      function enableScroll() {
+        document.body.style.overflow = "auto";
+      }
+
+      // Gérer l'ouverture et la fermeture du menu burger
+      burger.addEventListener("click", () => {
+        burger.classList.toggle("toggle");
+        navLinks.classList.toggle("active");
+
+        // Désactiver le scroll si le menu est ouvert
+        if (navLinks.classList.contains("active")) {
+          disableScroll();
+        } else {
+          enableScroll();
+        }
+      });
+
+      // Fermer le menu burger lorsque l'on clique sur un lien de navigation
+      links.forEach((link) => {
+        link.addEventListener("click", () => {
+          if (navLinks.classList.contains("active")) {
+            burger.click(); // Ferme le menu en simulant un clic
+          }
+        });
+      });
     </script>
   </body>
 </html>
